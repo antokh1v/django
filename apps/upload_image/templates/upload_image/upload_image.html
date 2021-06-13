@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="column is-12">
+            <h1 class="title">Upload image</h1>
+
+            <hr>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-success">Upload</button>
+                    </div>
+                </div>
+            </form>
+            {% if img_obj %}
+                <h3>Successful</h3>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
