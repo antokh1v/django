@@ -17,8 +17,17 @@
                     </div>
                 </div>
             </form>
+
             {% if img_obj %}
-                <h3>Successful</h3>
+                <h3>Successful, hourly res
+                    {% for i in res.values %}
+                        {% if forloop.last %}
+                            <p>All picture res: {{ i }}</p>
+                        {% else %}
+                            <p>{{ forloop.counter }} two hour: {{ i }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </h3>
             {% endif %}
         </div>
     </div>

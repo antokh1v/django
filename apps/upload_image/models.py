@@ -1,5 +1,5 @@
 from django.db import models
-
+from .services import count_black_pix
 # Create your models here.
 
 
@@ -9,3 +9,5 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title
+
+
